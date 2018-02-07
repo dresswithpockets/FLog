@@ -21,11 +21,11 @@ Usage
         Logger.Log("Hello world");
 
         // We can define the level (type) of message
-        Logger.Log(Logger.Level.Fine, "Explicit define level");
+        Logger.Log(Logger.Level.Fine, "Explicitly define level");
 
         // Explicit definition of the class from which the logging
-        Logger.Log<Program>("Explicit define log class");
-        Logger.Log<Program>(Logger.Level.Fine, "Explicit define log class and level");
+        Logger.Log<Program>("Explicitly define log class");
+        Logger.Log<Program>(Logger.Level.Fine, "Explicitly define log class and level");
 
         // Settings of default type of message
         Logger.DefaultLevel = Logger.Level.Severe;
@@ -45,10 +45,10 @@ Usage
         Logger.Debug.Log("Debug log");
         Logger.Debug.Log<Program>("Debug log");
 
-        Logger.IsDebug = false;
+        Logger.DebugEnabled = false;
         Logger.Debug.Log("Not-logged message");
 
-        Logger.IsDebug = true;
+        Logger.DebugEnabled = true;
         Logger.Debug.Log("I'am back!");
 
         Console.ReadKey();
