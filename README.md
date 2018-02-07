@@ -1,7 +1,7 @@
-Simple Logger C#.NET
+FLog
 =============
 
-Very easy to use.
+Simple logging utility for logging at different levels with various handlers, formatters and destinations.
 
 Usage
 -------
@@ -30,28 +30,25 @@ Usage
         // Settings of default type of message
         Logger.DefaultLevel = Logger.Level.Severe;
 
+        // Stack trace is preserved through exceptions.
         try 
-        { 
-            // Simulation of exceptions
+        {
             throw new Exception();
         }
         catch (Exception exception)
         {
-            // Logging exceptions
-            // Automatical adjustment of specific log into the Error and adding of StackTrace
             Logger.Log(exception);
             Logger.Log<Program>(exception);
         }
 
-        // Special feature - debug logging
-
+        // Logging through Debug outlet - toggleable via DebugOff and DebugOn
         Logger.Debug.Log("Debug log");
         Logger.Debug.Log<Program>("Debug log");
 
-        Logger.DebugOff();
+        Logger.IsDebug = false;
         Logger.Debug.Log("Not-logged message");
 
-        Logger.DebugOn();
+        Logger.IsDebug = true;
         Logger.Debug.Log("I'am back!");
 
         Console.ReadKey();
