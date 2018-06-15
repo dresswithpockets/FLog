@@ -1,6 +1,6 @@
 namespace FLog.Logging.Formatters
 {
-    internal class DefaultLoggerFormatter : ILoggerFormatter
+    public class DefaultLoggerFormatter : ILoggerFormatter
     {
         public string ApplyFormat(LogMessage logMessage)
         {
