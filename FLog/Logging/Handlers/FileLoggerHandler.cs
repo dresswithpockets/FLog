@@ -36,7 +36,7 @@ namespace FLog.Logging.Handlers
                     directoryInfo.Create();
             }
 
-            using (var writer = new StreamWriter(File.Open(Path.Combine(_directory, _fileName), FileMode.Append)))
+            using (var writer = new StreamWriter(File.Open(Path.Combine(_directory, _fileName), FileMode.Append, FileAccess.Write, FileShare.ReadWrite)))
                 writer.WriteLine(_loggerFormatter.ApplyFormat(logMessage));
         }
 
